@@ -1,14 +1,31 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 //import "../css/login.css"
-import Header from "../components/Header"
-import Menu from "../components/Menu"
-export default class home extends Component{
-    render(){
+import Header from "../components/Header/Header"
+import Menu from "../components/Menu/Menu"
+
+
+export default class home extends Component {
+    
+    constructor(props) {
+        super(props);
+
+
+
+      
+    }
+
+
+    render() {
+        let data = JSON.parse(sessionStorage.getItem('userData'));
+        console.log("UserData:", data);
         return (
-            <div>
-                <Header name="Jhon " lastName="Doe"/>
-                <Menu/>
-            </div>    
+            <div id="content-wrapper" className="d-flex flex-column">
+                <div id="content">
+                    <Header name={data.displayName} photoURL={data.photoURL} />
+
+                    
+                </div>
+            </div>
         );
     }
 

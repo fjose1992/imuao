@@ -2,8 +2,33 @@ import React, { Component } from 'react';
 import './App.css';
 import loadable from "react-loadable"
 import {HashRouter, Route, Switch} from "react-router-dom";
-import * as firebase from 'firebase';
+import Routes from './routes';
 
+
+
+
+
+class App extends Component {
+
+  constructor(){
+    super();
+    this.state={
+      appName: "IMUAO - Repositorio de Ingeniria Multimedia",
+      home: false
+    }
+  }
+
+  render() {
+    return (
+      <div>
+          <Routes name={this.state.appName}/>
+      </div>
+    );
+  }
+}
+export default App;
+
+/*
 const loading = () =>  <div>Cargando...</div>;
 const login = loadable({
   loader: ()=> import("./view/login"),
@@ -11,6 +36,7 @@ const login = loadable({
 })
 
 // Initialize Firebase
+
 const config = {
   apiKey: "AIzaSyDX3XfOXAfEbLOyXY-khxYBlcMD3996XE0",
   authDomain: "imuao-administrador.firebaseapp.com",
@@ -42,3 +68,4 @@ class App extends Component {
 }
 
 export default App;
+*/

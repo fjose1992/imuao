@@ -15,13 +15,13 @@ export default class Menu extends Component{
                             <span  className="pull-right hidden-xs showopacity glyphicon glyphicon-home" ></span>                     
                         </a></li>
                         <li ><a href="#">Busquedas   
-                            <span  class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span>                     
+                            <span  className="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span>                     
                         </a></li>
                         <li ><a href="#">Conectar   
-                            <span  class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span>                     
+                            <span  className="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span>                     
                         </a></li>
                         <li ><a href="#">Mis favoritos
-                            <span class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span>
+                            <span className="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span>
                         </a></li>
                         
                     </ul>

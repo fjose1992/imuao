@@ -55,8 +55,6 @@
 document.getElementById("OpenFilter").onclick = function(){
   //document.getElementById("asideFilter").style.width = "250px";
   $("#asideFilter").slideToggle();
-  $(".overlay").toggle("slow");
-  //document.getElementById("container-fluid").style.marginRigth = "250px";
-  $(".container-fluid").css("background-color", "rgba(0,0,0,0.4)")
-  //document.getElementsByClassName("container-fluid").style.backgroundColor = "rgba(0,0,0,0.4)";
+  $(".overlay").toggle();
+
 }

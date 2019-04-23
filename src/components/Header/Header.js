@@ -12,6 +12,11 @@ export default class Header extends Component {
         }
 
     }
+    openNav() {
+        document.getElementById("asideFilter").style.width = "250px";
+        document.getElementById("container-fluid").style.marginRigth = "250px";
+        document.getElementById("container-fluid").style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
     render() {
         return (
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -37,7 +42,7 @@ export default class Header extends Component {
                     <li className="nav-item dropdown no-arrow mx-1">
                         <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                            <button href="#" className="btn btn-light btn-circle">
+                            <button id="OpenFilter" className="btn btn-light btn-circle">
                                 <i className="fas fa fa-filter"></i>
                             </button>
                         </a>

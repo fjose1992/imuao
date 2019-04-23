@@ -4,3 +4,15 @@
 .fa-chevron-right{
     margin-left: .5rem;
 }
+.overlay{
+    background-color: rgba(0,0,0,0.5);
+    height: 93%;
+    width: 85%;
+    position: fixed;
+    z-index: 4;
+    top: 7%;
+    left: 0;
+    display: none;
+    transition: 0.5s;
+    padding-top: 60px;
+  }

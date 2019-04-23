@@ -37,9 +37,9 @@ export default class Header extends Component {
                     <li className="nav-item dropdown no-arrow mx-1">
                         <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                            <a href="#" className="btn btn-light btn-circle">
+                            <button href="#" className="btn btn-light btn-circle">
                                 <i className="fas fa fa-filter"></i>
-                            </a>
+                            </button>
                         </a>
                     </li>
 

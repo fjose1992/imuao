@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 //import "../css/login.css"
 import Header from "../components/Header/Header"
-import Menu from "../components/Menu/Menu"
+import HeadBarInfo from "../components/HeadBarInfo/HeadBarInfo"
+import CardUser from "../components/CardUser/CardUser"
 
 
 export default class home extends Component {
@@ -22,7 +23,14 @@ export default class home extends Component {
             <div id="content-wrapper" className="d-flex flex-column">
                 <div id="content">
                     <Header name={data.displayName} photoURL={data.photoURL} />
+                    
+                    <div className="container-fluid ">
+                        <HeadBarInfo title="Repositorio de Ingenieros Multimedia" breadcrumb="Inicio"/>
 
+                        
+                            <CardUser/>
+                        
+                    </div>
                     
                 </div>
             </div>

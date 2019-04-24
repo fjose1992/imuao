@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./CardUser.css";
 import $ from 'jquery';
-
+import Portafolio from "../Portafolio/Portafolio"
 
 export default class CardUser extends Component {
 
@@ -14,7 +14,9 @@ export default class CardUser extends Component {
             email: "",
             labelSkills: "",
             skills: "",
-            key: ""
+            key: "",
+            portafolio: "",
+            phone: "",
 
         }
 //<img className="img-profile rounded-circle" src="http://www.visualmarketing.com.ar/wp-content/uploads/2013/08/team3.png" />
@@ -56,17 +58,18 @@ export default class CardUser extends Component {
         var header_card_info = "header-card-info-"+this.props.code;
         var profile_skills_values = "profile-skills-values-"+this.props.code;
         var profile_sidebar = "profile-sidebar-"+this.props.code;
+        var codeModal = "#ModalProjects-"+this.props.code;
 
         var skillsArray = Object.entries(this.props.skills);        
         var interesAreas = skillsArray.map((skill) =>{  
             var key = skill[1]+"-"+skill[0];       
             return (<div className="desc" key={key}>{skill[0]}</div>)            
         });
-
+        console.log("PORRT:", this.props.portafolio)
+        //Construlle los skills con los valores
         var skillsBarValues = skillsArray.map((skill) =>{  
             var key = skill[0]+"-"+skill[1];       
-            var porcentSkill = skill[1]+"%";
-
+            var porcentSkill = skill[1]+"%";        
             return (<div key={key}>
                         <div className="mb-1 small">{skill[0]}</div>
                         <div className="progress progress-sm mb-2">
@@ -76,9 +79,12 @@ export default class CardUser extends Component {
                     )           
         });
 
+        
+
         return (
             
                 <div className="col-lg-4" >
+                    <Portafolio skills={this.props.skills} portafolio={this.props.portafolio} name={this.props.name} code={this.props.code} email={this.props.email} phone={this.props.phone}/>
                     <div  className="card shadow mb-4"  >
                         <div className="card-header header-card-info py-3" id={header_card_info} style={{display: 'none'}}>
                             <ul className="navbar-nav ml-auto">
@@ -120,7 +126,7 @@ export default class CardUser extends Component {
                             </div>
                         </div>
                         <div className="card-footer py-3 text-center" >
-                            <a href="#" className="m-0 font-weight-bold text-primary">Ver portafolio</a>
+                            <a href="#" data-toggle="modal" data-target={codeModal} className="m-0 font-weight-bold text-primary">Ver portafolio</a>
                         </div>
                     </div>
                 

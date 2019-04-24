@@ -5,6 +5,7 @@ import HeadBarInfo from "../components/HeadBarInfo/HeadBarInfo"
 import CardUser from "../components/CardUser/CardUser"
 import AsideFilter from "../components/AsideFilter/AsideFilter"
 
+import Projects from "../components/Portafolio/Portafolio"
 
 import * as firebase from 'firebase';
 import fireBaseConfigIMUAO from '../fireBaseConfigIMUAO';
@@ -108,13 +109,12 @@ export default class home extends Component {
                 }
 
             })
-            console.log("Filtered:", usersList);
-            console.log("TODO", this.state.list);
+        
         
         }
         //Este se encarga de renderizar toda la informacion en el componente CardUser
-        var CardUserData = usersList.map((user) =>{  
-            return (<CardUser key={user.code.toString()} name={user.name.toString()} email={user.email.toString()} skills={user.skills} code={user.code.toString()} />)
+        var CardUserData = usersList.map((user) =>{              
+            return (<CardUser key={user.code.toString()}  name={user.name.toString()} email={user.email.toString()} phone={user.phone.toString()} skills={user.skills} code={user.code.toString()} portafolio={user.portfolio} />)
           });
           
 
@@ -123,8 +123,8 @@ export default class home extends Component {
             <div id="content-wrapper" className="d-flex flex-column">
             <div className="overlay"></div>
                 <div id="content">
-                    <Header name={data.displayName} photoURL={data.photoURL} updateSearch={this.updateSearchText} />
-                    <h1></h1>
+                    <Header name={data.displayName} photoURL={data.photoURL} updateSearch={this.updateSearchText} />                   
+                    
                     <div className="container-fluid ">
                         <HeadBarInfo title="Repositorio de Ingenieros Multimedia" breadcrumb="Inicio"/>
                         <AsideFilter filterBySkilss={this.updateSkillEnfacis}/> 

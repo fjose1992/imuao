@@ -50,11 +50,17 @@
     console.log("Holaa");
   }
 
+  $("#asideFilter").click(function (){
+    $("#asideFilter").slideToggle();
+    $(".overlay").toggle();
+  });
 })(jQuery); // End of use strict
 
+/*
 document.getElementById("OpenFilter").onclick = function(){
   //document.getElementById("asideFilter").style.width = "250px";
   $("#asideFilter").slideToggle();
   $(".overlay").toggle();
 
 }
+*/

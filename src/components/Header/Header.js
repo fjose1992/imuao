@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 //import "../css/login.css"
+import $ from 'jquery';
 
 
 export default class Header extends Component {
@@ -16,6 +17,10 @@ export default class Header extends Component {
         document.getElementById("asideFilter").style.width = "250px";
         document.getElementById("container-fluid").style.marginRigth = "250px";
         document.getElementById("container-fluid").style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    openNavFilter(){
+        $("#asideFilter").slideToggle();
+        $(".overlay").toggle();
     }
     render() {
         return (
@@ -42,7 +47,7 @@ export default class Header extends Component {
                     <li className="nav-item dropdown no-arrow mx-1">
                         <a className="nav-link dropdown-toggle"  id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                            <button id="OpenFilter" className="btn btn-light btn-circle">
+                            <button id="OpenFilter" onClick={()=>this.openNavFilter()} className="btn btn-light btn-circle">
                                 <i className="fas fa fa-filter"></i>
                             </button>
                         </a>

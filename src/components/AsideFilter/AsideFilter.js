@@ -31,7 +31,7 @@ export default class AsideFilter extends Component {
 
         
         this.props.filterBySkilss(filterEnfasis);
-        closeNav();
+        this.closeNav();
     }
     closeNav() {
         $("#asideFilter").hide();

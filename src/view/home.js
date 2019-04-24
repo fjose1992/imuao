@@ -24,6 +24,7 @@ export default class home extends Component {
             fromBarFilter: true,
             search: '',
             skillEnfacis: '',
+            filterHabilidades: ''
         };
         this.updateSearchText = this.updateSearchText;
         this.updateSkillEnfacis = this.updateSkillEnfacis.bind(this);
@@ -38,11 +39,12 @@ export default class home extends Component {
 
     }
     //Se encarga de asigar el state del valor asigando en el panel de filtros
-    updateSkillEnfacis = (data) => {
+    updateSkillEnfacis = (data, data2) => {
         
-        console.log("REFS:",data);
+        console.log("REFS:",data2);
         this.setState({ 
             skillEnfacis: data,
+            filterHabilidades: data2,
             fromBarFilter: false,
         });
     }
@@ -97,11 +99,11 @@ export default class home extends Component {
 
             var usersList = [];
             this.state.list.map((dataUserList) => {
-                var SkillsList = Object.keys(dataUserList.skills);
+                var SkillsList = Object.keys(dataUserList.skills).map(function (value){ return value.toLowerCase();});
             
-                var flagFilter = SkillsList.indexOf(this.state.skillEnfacis);
-                
-                if(flagFilter !== -1){
+                var flagFilter = SkillsList.indexOf(this.state.skillEnfacis.toLowerCase());
+                var flagFilter2 = SkillsList.indexOf(this.state.filterHabilidades.toLowerCase());
+                if(flagFilter !== -1 || flagFilter2 !== -1){
                     usersList.push(dataUserList);
                 }
 

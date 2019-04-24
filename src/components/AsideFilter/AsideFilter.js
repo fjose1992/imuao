@@ -16,6 +16,7 @@ export default class AsideFilter extends Component {
         event.preventDefault();
         console.log("REF2:", this.refs.front.value);
         var filterEnfasis = "";
+        var filterHabilidades = "";
         if(this.refs.front.checked){
             filterEnfasis = "FrontEnd";
         }
@@ -28,9 +29,17 @@ export default class AsideFilter extends Component {
         if(this.refs.ux.checked){
             filterEnfasis = "UX";
         }
-
+        if(this.refs.back.unity){
+            filterHabilidades = "Unity";
+        }
+        if(this.refs.reactJs.checked){
+            filterHabilidades = "reactJs";
+        }
+        if(this.refs.gameDesing.checked){
+            filterHabilidades = "GameDesing";
+        }
         
-        this.props.filterBySkilss(filterEnfasis);
+        this.props.filterBySkilss(filterEnfasis, filterHabilidades);
         this.closeNav();
     }
     closeNav() {
@@ -62,16 +71,16 @@ export default class AsideFilter extends Component {
                         <div className="card-body">
                             
                                 <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                    <label className="form-check-label" htmlFor="exampleCheck1">Unity 3D</label>
+                                    <input type="radio" className="form-check-input" id="unity" name="habilidadesFilter" ref="unity" />
+                                    <label className="form-check-label" htmlFor="unity">Unity 3D</label>
                                 </div>
                                 <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                    <label className="form-check-label" htmlFor="exampleCheck1">React Js</label>
+                                    <input type="radio" className="form-check-input" id="reactJs" name="habilidadesFilter" ref="reactJs" />
+                                    <label className="form-check-label" htmlFor="reactJs">React Js</label>
                                 </div>
                                 <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                    <label className="form-check-label" htmlFor="exampleCheck1">Game Design</label>
+                                    <input type="radio" className="form-check-input" id="GameDesing" name="habilidadesFilter" ref="gameDesing" />
+                                    <label className="form-check-label" htmlFor="GameDesing">Game Design</label>
                                 </div>                                                        
                         </div>
                         </div>

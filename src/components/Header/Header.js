@@ -28,7 +28,7 @@ export default class Header extends Component {
                 
                 <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div className="input-group">
-                        <input type="text" onChange={(e) => this.props.updateSearch(e.target.value)} className="form-control bg-light border-0 small" placeholder="Búscar proyecto.." aria-label="Search" aria-describedby="basic-addon2" />
+                        <input type="text" onChange={(e) => this.props.updateSearch(e.target.value)} className="form-control bg-light border-0 small" placeholder="Búscar..." aria-label="Search" aria-describedby="basic-addon2" />
                         <div className="input-group-append">
                             <button className="btn btn-primary" type="button">
                                 <i className="fas fa-search fa-sm"></i>
@@ -40,7 +40,7 @@ export default class Header extends Component {
                 <ul className="navbar-nav ml-auto">
 
                     <li className="nav-item dropdown no-arrow mx-1">
-                        <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle"  id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                             <button id="OpenFilter" className="btn btn-light btn-circle">
                                 <i className="fas fa fa-filter"></i>

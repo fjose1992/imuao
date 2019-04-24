@@ -79,23 +79,23 @@ export default class CardUser extends Component {
         return (
             
                 <div className="col-lg-4" >
-                    <div  className="card shadow mb-4"  onClick={()=>this.SkillsData(this.props.code)} >
+                    <div  className="card shadow mb-4"  >
                         <div className="card-header header-card-info py-3" id={header_card_info} style={{display: 'none'}}>
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item dropdown no-arrow">
                                     <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                
-                                    <img src="http://www.visualmarketing.com.ar/wp-content/uploads/2013/08/team3.png" className="card-header-img" alt=""   />                             
+                                    <img src="https://dealeraccelerate-all.s3.amazonaws.com/fastlane/marketing_assets/375/male-profile-blank.jpg" className="card-header-img"  />                             
                                     <span className="mr-2 d-none d-lg-inline  header-card-text">{this.props.name}</span>   
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <div className="card-body justify-content-center">
+                        <div className="card-body justify-content-center" onClick={()=>this.SkillsData(this.props.code)} >
 
                             <div className="profile-sidebar" id={profile_sidebar}>
                         
                                 <div className="profile-userpic text-center">
-                                    <img  src="http://www.visualmarketing.com.ar/wp-content/uploads/2013/08/team3.png" className="img-responsive" alt=""/>
+                                    <img  src="https://dealeraccelerate-all.s3.amazonaws.com/fastlane/marketing_assets/375/male-profile-blank.jpg" className="img-responsive" />
                                 </div>
                     
                                 <div className="profile-usertitle">
